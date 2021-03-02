@@ -4,6 +4,7 @@ using UnityEngine;
 
 public sealed class Demo : MonoBehaviour
 {
+    [System.Serializable]
     public struct Tile3
     {
         public Mesh mesh;
@@ -12,6 +13,7 @@ public sealed class Demo : MonoBehaviour
 
     [SerializeField] private Mesh triangulation;
     [SerializeField] private Tile3[] tiles;
+    [SerializeField] private Material material;
     [SerializeField] private int seed;
     [SerializeField] private float probability;
 
@@ -78,17 +80,17 @@ public sealed class Demo : MonoBehaviour
 
             var tileMesh = FindTile(tiles, t0, t1, t2, out Vector3 p0, out Vector3 p1, out Vector3 p2);
 
-            var sourceMatrix = new Matrix4x4(p0, p1, p2, Vector4.zero);
+            var sourceMatrix = CreateMatrix(p0, p1, p2);
 
-            var inverseSourceMatrix = new Matrix4x4();
-            bool success = Matrix4x4.Inverse3DAffine(sourceMatrix, ref inverseSourceMatrix);
-            if (!success)
-            {
-                Debug.LogErrorFormat("Failed to invert matrix for triangle at {0}", i);
-                continue;
-            }
+            var inverseSourceMatrix = sourceMatrix.inverse;
+            //bool success = Matrix4x4.Inverse(sourceMatrix, ref inverseSourceMatrix);
+            //if (!success)
+            //{
+            //    Debug.LogErrorFormat("Failed to invert matrix for triangle at {0}\n{1}", i, sourceMatrix);
+            //    continue;
+            //}
 
-            var targetMatrix = new Matrix4x4(v0, v1, v2, Vector4.zero);
+            var targetMatrix = CreateMatrix(v0, v1, v2);
             var transformation = targetMatrix * inverseSourceMatrix;
 
             var meshVerts = tileMesh.vertices;
@@ -118,7 +120,25 @@ public sealed class Demo : MonoBehaviour
         var mf = go.AddComponent<MeshFilter>();
         var mr = go.AddComponent<MeshRenderer>();
         mf.sharedMesh = mesh;
+        mr.sharedMaterial = material;
         go.transform.SetParent(transform, false);
+    }
+
+    private static Matrix4x4 CreateMatrix(Vector3 a, Vector3 b, Vector3 c, Vector3 d)
+    {
+        var p = ToVector4(a);
+        var q = ToVector4(b);
+        var r = ToVector4(c);
+        var s = ToVector4(d);
+        return new Matrix4x4(p, q, r, s);
+    }
+
+    private static Vector4 ToVector4(Vector3 v)
+    {
+        Vector4 w = v;
+        w.y = 0;
+        w.w = 1;
+        return w;
     }
 
     private static Mesh FindTile(Tile3[] tiles, int t0, int t1, int t2, out Vector3 p0, out Vector3 p1, out Vector3 p2)
