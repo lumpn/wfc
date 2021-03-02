@@ -82,13 +82,18 @@ public sealed class Demo : MonoBehaviour
 
             var sourceMatrix = CreateMatrix(p0, p1, p2);
 
-            var inverseSourceMatrix = sourceMatrix.inverse;
-            //bool success = Matrix4x4.Inverse(sourceMatrix, ref inverseSourceMatrix);
-            //if (!success)
-            //{
-            //    Debug.LogErrorFormat("Failed to invert matrix for triangle at {0}\n{1}", i, sourceMatrix);
-            //    continue;
-            //}
+            //var inverseSourceMatrix = sourceMatrix.inverse;
+            var inverseSourceMatrix = new Matrix4x4();
+            bool success = Matrix4x4.Inverse3DAffine(sourceMatrix, ref inverseSourceMatrix);
+            if (!success)
+            {
+                Debug.LogErrorFormat("Failed to invert matrix for triangle at {0}\n{1}", i, sourceMatrix);
+                continue;
+            }
+            else
+            {
+                Debug.LogFormat("Source\n{0}\nInverse\n{1}", sourceMatrix, inverseSourceMatrix);
+            }
 
             var targetMatrix = CreateMatrix(v0, v1, v2);
             var transformation = targetMatrix * inverseSourceMatrix;
@@ -100,7 +105,10 @@ public sealed class Demo : MonoBehaviour
             for (int j = 0; j < meshVerts.Length; j++)
             {
                 var v = meshVerts[j];
-                var w = transformation.MultiplyPoint3x4(v);
+                var xz = new Vector3(v.x, v.z, 1);
+                var w = transformation.MultiplyPoint3x4(xz);
+                w.z = w.y;
+                w.y = v.y;
                 builtVerts.Add(w);
             }
 
@@ -124,25 +132,34 @@ public sealed class Demo : MonoBehaviour
         go.transform.SetParent(transform, false);
     }
 
-    private static Matrix4x4 CreateMatrix(Vector3 a, Vector3 b, Vector3 c, Vector3 d)
+    private static Matrix4x4 CreateMatrix(Vector3 a, Vector3 b, Vector3 c)
     {
         var p = ToVector4(a);
         var q = ToVector4(b);
         var r = ToVector4(c);
-        var s = ToVector4(d);
+        var s = Vector4.zero;
         return new Matrix4x4(p, q, r, s);
     }
 
     private static Vector4 ToVector4(Vector3 v)
     {
-        Vector4 w = v;
-        w.y = 0;
-        w.w = 1;
-        return w;
+        return new Vector4(v.x, v.z, 1, 0);
     }
 
     private static Mesh FindTile(Tile3[] tiles, int t0, int t1, int t2, out Vector3 p0, out Vector3 p1, out Vector3 p2)
     {
+        for (int idx = 0; idx < tiles.Length; idx++)
+        {
+            var tile = tiles[idx];
+            var f0 = tile.f0;
+            var f1 = tile.f1;
+            var f2 = tile.f2;
+
+            for (int rotation = 0; rotation < 3; rotation++)
+            {
+            }
+        }
+
         p0 = new Vector3(0, 0, 0);
         p1 = new Vector3(1, 0, -2);
         p2 = new Vector3(-1, 0, -2);
@@ -199,7 +216,7 @@ public sealed class Demo : MonoBehaviour
         var result = new int[num];
         for (int i = 0; i < num; i++)
         {
-            var type = (random.NextDouble() <= probability) ? 1 : 0;
+            var type = (random.NextDouble() <= probability) ? 2 : 1;
             result[i] = type;
         }
 
