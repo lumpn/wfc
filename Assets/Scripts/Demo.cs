@@ -59,6 +59,9 @@ public sealed class Demo : MonoBehaviour
             }
         }
 
+        var builtVerts = new List<Vector3>();
+        var builtTris = new List<int>();
+
         for (int i = 0; i < triangles.Length; i += 3)
         {
             var i0 = triangles[i + 0];
@@ -68,23 +71,62 @@ public sealed class Demo : MonoBehaviour
             var v0 = vertices[i0];
             var v1 = vertices[i1];
             var v2 = vertices[i2];
+
             var t0 = types[i0];
             var t1 = types[i1];
             var t2 = types[i2];
 
-            // rotate w.l.o.g.
-            while (true)
-            {
-                if (t0 <= t1 && t1 <= t2) break;
+            var tileMesh = FindTile(tiles, t0, t1, t2, out Vector3 p0, out Vector3 p1, out Vector3 p2);
 
-                var tmp = i0;
-                i0 = i1;
-                i1 = i2;
-                i2 = tmp;
+            var sourceMatrix = new Matrix4x4(p0, p1, p2, Vector4.zero);
+
+            var inverseSourceMatrix = new Matrix4x4();
+            bool success = Matrix4x4.Inverse3DAffine(sourceMatrix, ref inverseSourceMatrix);
+            if (!success)
+            {
+                Debug.LogErrorFormat("Failed to invert matrix for triangle at {0}", i);
+                continue;
             }
 
+            var targetMatrix = new Matrix4x4(v0, v1, v2, Vector4.zero);
+            var transformation = targetMatrix * inverseSourceMatrix;
 
+            var meshVerts = tileMesh.vertices;
+            var meshTris = tileMesh.triangles;
+
+            var vertOffset = builtVerts.Count;
+            for (int j = 0; j < meshVerts.Length; j++)
+            {
+                var v = meshVerts[j];
+                var w = transformation.MultiplyPoint3x4(v);
+                builtVerts.Add(w);
+            }
+
+            for (int j = 0; j < meshTris.Length; j++)
+            {
+                var t = meshTris[j];
+                builtTris.Add(vertOffset + t);
+            }
         }
+
+        var mesh = new Mesh();
+        mesh.SetVertices(builtVerts);
+        mesh.SetTriangles(builtTris, 0);
+        mesh.Optimize();
+
+        var go = new GameObject();
+        var mf = go.AddComponent<MeshFilter>();
+        var mr = go.AddComponent<MeshRenderer>();
+        mf.sharedMesh = mesh;
+        go.transform.SetParent(transform, false);
+    }
+
+    private static Mesh FindTile(Tile3[] tiles, int t0, int t1, int t2, out Vector3 p0, out Vector3 p1, out Vector3 p2)
+    {
+        p0 = new Vector3(0, 0, 0);
+        p1 = new Vector3(1, 0, -2);
+        p2 = new Vector3(-1, 0, -2);
+        return tiles[2].mesh;
     }
 
     private static void Replace(int[] tris, int a, int b)
