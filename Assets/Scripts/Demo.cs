@@ -15,7 +15,7 @@ public sealed class Demo : MonoBehaviour
     [SerializeField] private Tile3[] tiles;
     [SerializeField] private Material material;
     [SerializeField] private int seed;
-    [SerializeField] private float probability;
+    [SerializeField, Range(0, 1)] private float probability;
 
     void Start()
     {
@@ -79,6 +79,7 @@ public sealed class Demo : MonoBehaviour
             var t2 = types[i2];
 
             var tileMesh = FindTile(tiles, t0, t1, t2, out Vector3 p0, out Vector3 p1, out Vector3 p2);
+            if (!tileMesh) continue;
 
             var sourceMatrix = CreateMatrix(p0, p1, p2);
 
@@ -90,10 +91,10 @@ public sealed class Demo : MonoBehaviour
                 Debug.LogErrorFormat("Failed to invert matrix for triangle at {0}\n{1}", i, sourceMatrix);
                 continue;
             }
-            else
-            {
-                Debug.LogFormat("Source\n{0}\nInverse\n{1}", sourceMatrix, inverseSourceMatrix);
-            }
+            //else
+            //{
+            //    Debug.LogFormat("Source\n{0}\nInverse\n{1}", sourceMatrix, inverseSourceMatrix);
+            //}
 
             var targetMatrix = CreateMatrix(v0, v1, v2);
             var transformation = targetMatrix * inverseSourceMatrix;
@@ -155,15 +156,38 @@ public sealed class Demo : MonoBehaviour
             var f1 = tile.f1;
             var f2 = tile.f2;
 
+            p0 = new Vector3(0, 0, 0);
+            p1 = new Vector3(1, 0, -2);
+            p2 = new Vector3(-1, 0, -2);
+
             for (int rotation = 0; rotation < 3; rotation++)
             {
+                if (HasFlag(t0, f0) && HasFlag(t1, f1) && HasFlag(t2, f2))
+                {
+                    return tile.mesh;
+                }
+
+                var tmp = f0;
+                f0 = f1;
+                f1 = f2;
+                f2 = tmp;
+
+                var ptmp = p0;
+                p0 = p1;
+                p1 = p2;
+                p2 = ptmp;
             }
         }
 
-        p0 = new Vector3(0, 0, 0);
-        p1 = new Vector3(1, 0, -2);
-        p2 = new Vector3(-1, 0, -2);
-        return tiles[2].mesh;
+        p0 = Vector3.zero;
+        p1 = Vector3.zero;
+        p2 = Vector3.zero;
+        return null;
+    }
+
+    private static bool HasFlag(int flag, int mask)
+    {
+        return (flag & mask) == flag;
     }
 
     private static void Replace(int[] tris, int a, int b)
@@ -179,11 +203,12 @@ public sealed class Demo : MonoBehaviour
 
     void CreateSentinel(Vector3 pos, int type)
     {
-        if (type < 1) return;
+        if (type < 2) return;
 
         var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
         var tr = cube.transform;
         tr.localPosition = pos;
+        tr.localScale = Vector3.one / 2;
         tr.SetParent(transform, false);
     }
 
@@ -228,7 +253,7 @@ public sealed class Demo : MonoBehaviour
         var result = new int[num];
         for (int i = 0; i < num; i++)
         {
-            var type = (i < seed) ? 1 : 0;
+            var type = (i < seed) ? 2 : 1;
             result[i] = type;
         }
 
