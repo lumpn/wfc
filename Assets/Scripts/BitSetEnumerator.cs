@@ -18,7 +18,7 @@ namespace Lumpn.WFC
         {
             this.bits = ids;
             this.index = -1;
-            // TODO: skip trailing zeros, stop at leading zeros?
+            // TODO Jonas: skip trailing zeros, stop at leading zeros?
         }
 
         public int Current => index;

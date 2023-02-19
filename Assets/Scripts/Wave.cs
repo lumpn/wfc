@@ -30,7 +30,7 @@ namespace Lumpn.WFC
 
         public void Collapse()
         {
-            // TODO: collapse all non-collapsed slots
+            // TODO Jonas: collapse all non-collapsed slots
         }
 
         public void Constrain(Vector3Int position, BitSet allowed)

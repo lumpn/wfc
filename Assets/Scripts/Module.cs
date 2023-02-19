@@ -2,16 +2,22 @@
 // MIT License
 // Copyright(c) 2023 Jonas Boetel
 //---------------------------------------- 
-using System;
+using UnityEngine;
 
 namespace Lumpn.WFC
 {
-    public sealed class Module
+    public sealed class Module : MonoBehaviour
     {
         public BitSet GetAllowed(Direction direction)
         {
-            // TODO implement
-            throw new NotImplementedException();
+            // TODO Jonas: implement
+            return new BitSet(0);
+        }
+
+        public void Spawn(Vector3Int position)
+        {
+            // TODO Jonas: implement scaling
+            Object.Instantiate(gameObject, position, Quaternion.identity);
         }
     }
 }

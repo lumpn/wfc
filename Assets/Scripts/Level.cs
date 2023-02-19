@@ -23,7 +23,7 @@ namespace Lumpn.WFC
         private readonly Vector3Int size;
         private readonly Slot[,,] slots;
 
-        public Level(Vector3Int size, SlotType[,,] slotTypes)
+        public Level(Vector3Int size, SlotType[] slotTypes)
         {
             this.size = size;
             this.slots = new Slot[size.x, size.y, size.z];
@@ -34,7 +34,7 @@ namespace Lumpn.WFC
                 {
                     for (int z = 0; z < size.z; z++)
                     {
-                        var slotType = slotTypes[x % 3, y % 3, z % 3];
+                        var slotType = slotTypes[(x % 3) + (y % 3) * 3 + (z % 3) * 3 * 3];
                         slots[x, y, z] = new Slot(slotType);
                     }
                 }

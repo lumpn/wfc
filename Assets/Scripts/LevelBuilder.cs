@@ -9,7 +9,7 @@ namespace Lumpn.WFC
     public sealed class LevelBuilder : MonoBehaviour
     {
         [SerializeField] private Vector3Int size;
-        [SerializeField] private SlotType[,,] slotTypes;
+        [SerializeField] private SlotType[] slotTypes;
         [SerializeField] private int interiorVolumeId;
 
         protected void Start()

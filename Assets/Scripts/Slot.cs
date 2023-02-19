@@ -54,6 +54,9 @@ namespace Lumpn.WFC
         {
             Debug.Assert(candidates.Count() == 1, "Not collapsed");
             var id = candidates.First();
+
+            var module = type.modules[id];
+            module.Spawn(position);
         }
     }
 }
