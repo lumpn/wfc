@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 734d4785df70f60418587bf4dfbc6469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slot: {fileID: 11400000, guid: 7c1f6dfd90fd8db409d9bf993f0379f3, type: 2}
   north: {fileID: 11400000, guid: ea5320d58df7d4b468e4a6d67fb531ee, type: 2}
   south: {fileID: 11400000, guid: 2d0018d7af406d445afa561d489a0f08, type: 2}
   east: {fileID: 11400000, guid: ea5320d58df7d4b468e4a6d67fb531ee, type: 2}

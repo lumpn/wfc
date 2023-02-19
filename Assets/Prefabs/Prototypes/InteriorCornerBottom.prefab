@@ -338,6 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 734d4785df70f60418587bf4dfbc6469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slot: {fileID: 11400000, guid: 9e49957e9a09fed4d8d6c30199399a3e, type: 2}
   north: {fileID: 11400000, guid: 62807a0d7b108894b90f009417d69f72, type: 2}
   south: {fileID: 11400000, guid: 2d0018d7af406d445afa561d489a0f08, type: 2}
   east: {fileID: 11400000, guid: 62807a0d7b108894b90f009417d69f72, type: 2}
