@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 5}
   - {x: 5, y: 0, z: 5}
-  - {x: 5, y: 0, z: 5}
+  - {x: 5, y: 0, z: 0}
   rotations:
   - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0.70710677, z: 0, w: -0.70710677}
-  - {x: 0, y: 1, z: 0, w: -0.00000004371139}
   - {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
+  - {x: 0, y: 1, z: 0, w: -0.00000004371139}
+  - {x: 0, y: 0.70710677, z: 0, w: -0.70710677}
   prototypes:
   - {fileID: 3425775441560259996, guid: a9255e217bd3d384b82fae132bd6be26, type: 3}
   - {fileID: 4348531014229950262, guid: c853e96cbd19a0c4ea3427e1a14ad2b8, type: 3}
