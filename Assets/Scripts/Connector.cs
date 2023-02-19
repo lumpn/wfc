@@ -6,9 +6,8 @@ using UnityEngine;
 
 namespace Lumpn.WFC
 {
-    // unrotated prototype for modules
-    public class Prototype : MonoBehaviour
+    [CreateAssetMenu]
+    public class Connector : ScriptableObject
     {
-        [SerializeField] private Connector north, south, east, west, up, down;
     }
 }
