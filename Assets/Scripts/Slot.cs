@@ -6,13 +6,21 @@ using UnityEngine;
 namespace Lumpn.WFC
 {
     // wave function of modules
-    public sealed class Slot 
+    public sealed class Slot
     {
+        private readonly SlotType type;
+        private ModuleSet modules;
         private bool isDirty = false;
+
+        public Slot(SlotType type)
+        {
+            this.type = type;
+            this.modules = type.allowed;
+        }
 
         public bool Constrain(ModuleSet allowed)
         {
-            return false;
+            return modules.Constrain(allowed);
         }
 
         public void MarkClean()
@@ -29,7 +37,14 @@ namespace Lumpn.WFC
 
         public ModuleSet GetAllowed(Direction direction)
         {
-            throw new NotImplementedException();
+            var result = new ModuleSet();
+            foreach (int id in modules)
+            {
+                var module = type.modules[id];
+                var allowed = module.GetAllowed(direction);
+                result.Add(allowed);
+            }
+            return result;
         }
     }
 }

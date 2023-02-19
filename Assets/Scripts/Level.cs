@@ -28,6 +28,7 @@ namespace Lumpn.WFC
                     for (int z = 0; z < size.z; z++)
                     {
                         slots[x, y, z] = new Slot();
+                        // TODO initialize slots with full module set for slot type
                     }
                 }
             }

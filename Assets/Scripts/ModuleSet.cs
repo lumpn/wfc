@@ -1,19 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using Unity.Burst.Intrinsics;
-using Unity.Mathematics;
+using UnityEngine;
 
 namespace Lumpn.WFC
 {
-    public struct ModuleSet
+    public struct ModuleSet : IEnumerable<int>
     {
         private ulong ids;
 
-        [Unity.Burst.BurstDiscardAttribute]
         public int Count()
         {
             return X86.Popcnt.popcnt_u64(ids);
+        }
+
+        public bool Constrain(ModuleSet allowed)
+        {
+            var oldValue = ids;
+            ids &= allowed.ids;
+
+            Debug.Assert(ids != 0, "Contradiction");
+            return (oldValue != ids);
+        }
+
+        public void Add(ModuleSet allowed)
+        {
+            ids |= allowed.ids;
+        }
+
+        public IEnumerator<int> GetEnumerator()
+        {
+            return new ModuleSetEnumerator(ids);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }
