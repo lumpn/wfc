@@ -1,33 +1,47 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Lumpn.WFC
 {
     // collection of slots
-    public class Level : MonoBehaviour
+    public sealed class Level
     {
-        private Slot[,,] slots;
-
-
-        public void Constrain(Vector3Int position, ModuleSet allowed)
+        private static readonly Dictionary<Direction, Vector3Int> offsets = new Dictionary<Direction, Vector3Int>
         {
-            var slot = GetSlot(position);
-            var current = slot.modules;
+            {Direction.North, Vector3Int.forward},
+            {Direction.South, Vector3Int.back},
+            {Direction.East, Vector3Int.right},
+            {Direction.West, Vector3Int.left},
+            {Direction.Up, Vector3Int.up},
+            {Direction.Down, Vector3Int.down},
+        };
 
+        private readonly Slot[,,] slots;
 
-            var changed = current.Constrain(allowed);
-            Debug.Assert(current.ids != 0);
-
-            if (changed)
+        public Level(Vector3Int size)
+        {
+            slots = new Slot[size.x, size.y, size.z];
+            for (int x = 0; x < size.x; x++)
             {
-                // propagate
+                for (int y = 0; y < size.y; y++)
+                {
+                    for (int z = 0; z < size.z; z++)
+                    {
+                        slots[x, y, z] = new Slot();
+                    }
+                }
             }
         }
 
-        private Slot GetSlot(Vector3Int position)
+        public Slot GetSlot(Vector3Int position)
         {
             return slots[position.x, position.y, position.z];
+        }
+
+        public Vector3Int GetNeighbor(Vector3Int position, Direction direction)
+        {
+            var offset = offsets[direction];
+            return position + offset;
         }
     }
 }
