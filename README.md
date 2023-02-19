@@ -1,2 +1,1 @@
-# unity-wfc
-Wave function collapse
+# Wave function collapse
