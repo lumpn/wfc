@@ -9,6 +9,10 @@ namespace Lumpn.WFC
     [CreateAssetMenu]
     public class PrototypeCollection : ScriptableObject
     {
-        [SerializeField] Prototype[] prototypes;
+        [Header("Slot rotations")]
+        [SerializeField] public Vector3[] positions;
+        [SerializeField] public Quaternion[] rotations;
+
+        [SerializeField] public Prototype[] prototypes;
     }
 }

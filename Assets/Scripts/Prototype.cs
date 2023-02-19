@@ -9,7 +9,7 @@ namespace Lumpn.WFC
     // unrotated prototype for modules
     public class Prototype : MonoBehaviour
     {
-        [SerializeField] private PrototypeSlot slot;
-        [SerializeField] private Connector north, south, east, west, up, down;
+        [SerializeField] public PrototypeSlot slot;
+        [SerializeField] public Connector north, south, east, west, up, down;
     }
 }

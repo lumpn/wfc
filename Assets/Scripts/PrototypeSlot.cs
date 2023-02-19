@@ -9,6 +9,6 @@ namespace Lumpn.WFC
     [CreateAssetMenu]
     public class PrototypeSlot : ScriptableObject
     {
-        [SerializeField] private SlotType[] targetSlotTypes;
+        [SerializeField] public SlotType[] targetSlotTypes;
     }
 }
