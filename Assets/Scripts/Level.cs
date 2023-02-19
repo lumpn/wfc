@@ -1,3 +1,7 @@
+//----------------------------------------
+// MIT License
+// Copyright(c) 2023 Jonas Boetel
+//---------------------------------------- 
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,7 +22,7 @@ namespace Lumpn.WFC
 
         private readonly Slot[,,] slots;
 
-        public Level(Vector3Int size)
+        public Level(Vector3Int size, SlotType[,,] slotTypes)
         {
             slots = new Slot[size.x, size.y, size.z];
             for (int x = 0; x < size.x; x++)
@@ -27,8 +31,8 @@ namespace Lumpn.WFC
                 {
                     for (int z = 0; z < size.z; z++)
                     {
-                        slots[x, y, z] = new Slot();
-                        // TODO initialize slots with full module set for slot type
+                        var slotType = slotTypes[x % 3, y % 3, z % 3];
+                        slots[x, y, z] = new Slot(slotType);
                     }
                 }
             }

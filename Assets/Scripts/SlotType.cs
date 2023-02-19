@@ -1,5 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+//----------------------------------------
+// MIT License
+// Copyright(c) 2023 Jonas Boetel
+//---------------------------------------- 
 using UnityEngine;
 
 namespace Lumpn.WFC
@@ -8,7 +10,7 @@ namespace Lumpn.WFC
     public class SlotType : ScriptableObject
     {
         public Module[] modules;
-        public ModuleSet allowed;
+        public BitSet allowed;
 
         // TODO implement
     }

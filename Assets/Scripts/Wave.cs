@@ -1,3 +1,7 @@
+//----------------------------------------
+// MIT License
+// Copyright(c) 2023 Jonas Boetel
+//---------------------------------------- 
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,7 +28,7 @@ namespace Lumpn.WFC
             this.level = level;
         }
 
-        public void Constrain(Vector3Int position, ModuleSet allowed)
+        public void Constrain(Vector3Int position, BitSet allowed)
         {
             var slot = level.GetSlot(position);
             Constrain(position, slot, allowed);
@@ -49,7 +53,7 @@ namespace Lumpn.WFC
             }
         }
 
-        private void Constrain(Vector3Int position, Slot slot, ModuleSet allowed)
+        private void Constrain(Vector3Int position, Slot slot, BitSet allowed)
         {
             var changed = slot.Constrain(allowed);
 

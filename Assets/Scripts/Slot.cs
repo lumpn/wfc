@@ -1,7 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+//----------------------------------------
+// MIT License
+// Copyright(c) 2023 Jonas Boetel
+//---------------------------------------- 
 
 namespace Lumpn.WFC
 {
@@ -9,7 +9,7 @@ namespace Lumpn.WFC
     public sealed class Slot
     {
         private readonly SlotType type;
-        private ModuleSet modules;
+        private BitSet modules;
         private bool isDirty = false;
 
         public Slot(SlotType type)
@@ -18,9 +18,9 @@ namespace Lumpn.WFC
             this.modules = type.allowed;
         }
 
-        public bool Constrain(ModuleSet allowed)
+        public bool Constrain(BitSet allowed)
         {
-            return modules.Constrain(allowed);
+            return modules.IntersectWith(allowed);
         }
 
         public void MarkClean()
@@ -35,14 +35,14 @@ namespace Lumpn.WFC
             return result;
         }
 
-        public ModuleSet GetAllowed(Direction direction)
+        public BitSet GetAllowed(Direction direction)
         {
-            var result = new ModuleSet();
+            var result = new BitSet();
             foreach (int id in modules)
             {
                 var module = type.modules[id];
                 var allowed = module.GetAllowed(direction);
-                result.Add(allowed);
+                result.UnionWith(allowed);
             }
             return result;
         }
