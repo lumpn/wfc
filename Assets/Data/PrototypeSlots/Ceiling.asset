@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d14a240bd8ec3b44d953e86804c86a31, type: 3}
   m_Name: Ceiling
   m_EditorClassIdentifier: 
+  targetSlotTypes:
+  - {fileID: 11400000, guid: e7159ce89907259488f7c493bac48dd0, type: 2}

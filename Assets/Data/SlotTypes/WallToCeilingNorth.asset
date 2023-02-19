@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d14a240bd8ec3b44d953e86804c86a31, type: 3}
-  m_Name: Floor
+  m_Script: {fileID: 11500000, guid: 3dba8f09d6aa9c7419a7d2eabdeac746, type: 3}
+  m_Name: WallToCeilingNorth
   m_EditorClassIdentifier: 
-  targetSlotTypes:
-  - {fileID: 11400000, guid: cee7a0f1a12d83f4c9401368812dad43, type: 2}
+  modules: []

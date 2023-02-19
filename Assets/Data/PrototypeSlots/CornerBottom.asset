@@ -12,3 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d14a240bd8ec3b44d953e86804c86a31, type: 3}
   m_Name: CornerBottom
   m_EditorClassIdentifier: 
+  targetSlotTypes:
+  - {fileID: 11400000, guid: 1f043aef4a1960e4eb8420a897c87941, type: 2}
+  - {fileID: 11400000, guid: b090c22228e23ba4ebb21d73147f3d11, type: 2}
+  - {fileID: 11400000, guid: 217328f0d3126e64d8b6391f4a1dd703, type: 2}
+  - {fileID: 11400000, guid: 62a8db46a5c8eee4eb2f099aedd0cb35, type: 2}

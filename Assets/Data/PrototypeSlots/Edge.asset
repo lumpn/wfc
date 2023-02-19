@@ -12,3 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d14a240bd8ec3b44d953e86804c86a31, type: 3}
   m_Name: Edge
   m_EditorClassIdentifier: 
+  targetSlotTypes:
+  - {fileID: 11400000, guid: 37da6756fe970e84499a2926d3e1ef62, type: 2}
+  - {fileID: 11400000, guid: 3356b68d18de3eb4ba2e994134bbc640, type: 2}
+  - {fileID: 11400000, guid: cafc38ae67410b5459d8f380e373a9de, type: 2}
+  - {fileID: 11400000, guid: 4521a1903b9d3ec4ca366d75e34b4bcd, type: 2}
