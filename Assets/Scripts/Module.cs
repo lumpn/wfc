@@ -8,10 +8,11 @@ namespace Lumpn.WFC
 {
     public sealed class Module : MonoBehaviour
     {
+        [SerializeField] public ulong[] allowed;
+
         public BitSet GetAllowed(Direction direction)
         {
-            // TODO Jonas: implement
-            return new BitSet(0);
+            return new BitSet(allowed[(int)direction]);
         }
 
         public void Spawn(Vector3Int position)

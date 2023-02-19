@@ -12,22 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecf6d856ea98c414cb19f0bd69fecc12, type: 3}
   m_Name: Prototypes
   m_EditorClassIdentifier: 
-  positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 5}
-  - {x: 5, y: 0, z: 5}
-  - {x: 5, y: 0, z: 0}
-  rotations:
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
-  - {x: 0, y: 1, z: 0, w: -0.00000004371139}
-  - {x: 0, y: 0.70710677, z: 0, w: -0.70710677}
   prototypes:
   - {fileID: 3425775441560259996, guid: a9255e217bd3d384b82fae132bd6be26, type: 3}
   - {fileID: 4348531014229950262, guid: c853e96cbd19a0c4ea3427e1a14ad2b8, type: 3}
   - {fileID: 1631735803541455152, guid: 5a0d2c8cf9fb0bc4d8e574301b2dcfe1, type: 3}
   - {fileID: 4008629948532670766, guid: ef2896a135b9b7f4486265478ecc98be, type: 3}
   - {fileID: 4380046830357641459, guid: 3400aa9e396faf540a4d3858cfd9f478, type: 3}
+  - {fileID: 4860212309227795320, guid: 9631e30b0526e294aaacf2110023d673, type: 3}
   - {fileID: 4342053058781211010, guid: 879f0bb1beb6cbe4ab24514b52a2ad54, type: 3}
   - {fileID: 4492202436263036136, guid: c0b23a739547b854285f5f3fc648ae00, type: 3}
   - {fileID: 5859041557029929995, guid: 67da8f958242f6b46a81b32fe362e0f2, type: 3}

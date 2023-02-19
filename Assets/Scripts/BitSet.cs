@@ -14,9 +14,9 @@ namespace Lumpn.WFC
     {
         private ulong bits;
 
-        public BitSet(int id)
+        public BitSet(ulong bits)
         {
-            bits = (1UL << id);
+            this.bits = bits;
         }
 
         public int Count()
