@@ -10,7 +10,7 @@ namespace Lumpn.WFC
     public class SlotType : ScriptableObject
     {
         public Module[] modules;
-        public BitSet allowed;
+        public BitSet candidates;
 
         // TODO implement
     }

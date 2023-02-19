@@ -28,10 +28,17 @@ namespace Lumpn.WFC
             this.level = level;
         }
 
+        public void Collapse()
+        {
+            // TODO: collapse all non-collapsed slots
+        }
+
         public void Constrain(Vector3Int position, BitSet allowed)
         {
-            var slot = level.GetSlot(position);
-            Constrain(position, slot, allowed);
+            if (level.TryGetSlot(position, out Slot slot))
+            {
+                Constrain(position, slot, allowed);
+            }
         }
 
         public void Process()
@@ -45,10 +52,11 @@ namespace Lumpn.WFC
                 foreach (var direction in directions)
                 {
                     var neighborPosition = level.GetNeighbor(position, direction);
-                    var neighbor = level.GetSlot(neighborPosition);
-
-                    var allowed = slot.GetAllowed(direction);
-                    Constrain(neighborPosition, neighbor, allowed);
+                    if (level.TryGetSlot(neighborPosition, out Slot neighbor))
+                    {
+                        var allowed = slot.GetAllowed(direction);
+                        Constrain(neighborPosition, neighbor, allowed);
+                    }
                 }
             }
         }

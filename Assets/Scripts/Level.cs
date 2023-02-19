@@ -20,11 +20,14 @@ namespace Lumpn.WFC
             {Direction.Down, Vector3Int.down},
         };
 
+        private readonly Vector3Int size;
         private readonly Slot[,,] slots;
 
         public Level(Vector3Int size, SlotType[,,] slotTypes)
         {
-            slots = new Slot[size.x, size.y, size.z];
+            this.size = size;
+            this.slots = new Slot[size.x, size.y, size.z];
+
             for (int x = 0; x < size.x; x++)
             {
                 for (int y = 0; y < size.y; y++)
@@ -38,9 +41,34 @@ namespace Lumpn.WFC
             }
         }
 
-        public Slot GetSlot(Vector3Int position)
+        public void Spawn()
         {
-            return slots[position.x, position.y, position.z];
+            for (int x = 0; x < size.x; x++)
+            {
+                for (int y = 0; y < size.y; y++)
+                {
+                    for (int z = 0; z < size.z; z++)
+                    {
+                        var slot = slots[x, y, z];
+                        var position = new Vector3Int(x, z, y);
+                        slot.Spawn(position);
+                    }
+                }
+            }
+        }
+
+        public bool TryGetSlot(Vector3Int position, out Slot slot)
+        {
+            if ((position.x >= 0 && position.x < size.x) &&
+                (position.y >= 0 && position.y < size.y) &&
+                (position.z >= 0 && position.z < size.z))
+            {
+                slot = slots[position.x, position.y, position.z];
+                return true;
+            }
+
+            slot = null;
+            return false;
         }
 
         public Vector3Int GetNeighbor(Vector3Int position, Direction direction)

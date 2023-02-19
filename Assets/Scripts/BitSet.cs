@@ -5,6 +5,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.Intrinsics;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace Lumpn.WFC
@@ -13,9 +14,19 @@ namespace Lumpn.WFC
     {
         private ulong bits;
 
+        public BitSet(int id)
+        {
+            bits = (1UL << id);
+        }
+
         public int Count()
         {
             return X86.Popcnt.popcnt_u64(bits);
+        }
+
+        public int First()
+        {
+            return math.tzcnt(bits);
         }
 
         public bool IntersectWith(BitSet other)

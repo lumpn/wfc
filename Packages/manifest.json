@@ -4,6 +4,7 @@
     "com.unity.ide.monodevelop": "file:../../com.unity.ide.monodevelop-2.3.1.tgz",
     "com.unity.probuilder": "5.0.6",
     "com.unity.progrids": "3.0.3-preview.6",
+    "com.unity.test-framework": "1.1.33",
     "com.unity.modules.physics": "1.0.0"
   }
 }
