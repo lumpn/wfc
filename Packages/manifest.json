@@ -1,7 +1,7 @@
 {
   "dependencies": {
+    "com.unity.burst": "1.6.6",
     "com.unity.ide.monodevelop": "file:../../com.unity.ide.monodevelop-2.3.1.tgz",
-    "com.unity.mathematics": "1.2.6",
     "com.unity.probuilder": "5.0.6",
     "com.unity.progrids": "3.0.3-preview.6",
     "com.unity.modules.physics": "1.0.0"
