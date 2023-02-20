@@ -24,6 +24,8 @@ namespace Lumpn.WFC
         {
             if (GUILayout.Button("Create modules"))
             {
+                AssetDatabase.StartAssetEditing();
+
                 foreach (var slotType in target.slotTypes)
                 {
                     slotType.modules.Clear();
@@ -102,6 +104,7 @@ namespace Lumpn.WFC
                     EditorUtility.SetDirty(module);
                 }
 
+                AssetDatabase.StopAssetEditing();
                 AssetDatabase.SaveAssets();
             }
         }

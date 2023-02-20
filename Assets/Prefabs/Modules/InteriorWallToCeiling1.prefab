@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db96dcd0d9c260439d9b35c695d698e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 4
+  id: 5
   slotType: {fileID: 11400000, guid: 9e74bd35f668408499f96732acdd26f3, type: 2}
   prototype: {fileID: 4492202436263036136, guid: c0b23a739547b854285f5f3fc648ae00, type: 3}
   connectors:
@@ -55,7 +55,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2d0018d7af406d445afa561d489a0f08, type: 2}
   - {fileID: 11400000, guid: 2d0018d7af406d445afa561d489a0f08, type: 2}
   - {fileID: 11400000, guid: ea5320d58df7d4b468e4a6d67fb531ee, type: 2}
-  allowed: 40000000000000004000000000000000040000000000000013000000000000001a000000000000001800000000000000
+  allowed: 
 --- !u!1001 &880220195156868860
 PrefabInstance:
   m_ObjectHideFlags: 0
