@@ -5,6 +5,7 @@
     "com.unity.probuilder": "5.0.6",
     "com.unity.progrids": "3.0.3-preview.6",
     "com.unity.test-framework": "1.1.33",
+    "de.lumpn.unity-formatting": "https://github.com/lumpn/unity-formatting.git",
     "com.unity.modules.physics": "1.0.0"
   }
 }

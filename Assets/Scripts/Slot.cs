@@ -1,8 +1,7 @@
 //----------------------------------------
 // MIT License
 // Copyright(c) 2023 Jonas Boetel
-//---------------------------------------- 
-
+//----------------------------------------
 using System;
 using UnityEngine;
 
@@ -11,12 +10,14 @@ namespace Lumpn.WFC
     // wave function of modules
     public sealed class Slot
     {
+        public readonly Vector3Int position;
         private readonly SlotType type;
-        private BitSet candidates;
+        private readonly BitSet candidates;
         private bool isDirty = false;
 
-        public Slot(SlotType type)
+        public Slot(Vector3Int position, SlotType type)
         {
+            this.position = position;
             this.type = type;
             this.candidates = new BitSet(type.candidates);
         }
@@ -57,6 +58,22 @@ namespace Lumpn.WFC
 
             var module = type.modules[id];
             module.Spawn(position);
+        }
+
+        public bool IsOpen()
+        {
+            return (candidates.Count() > 1);
+        }
+
+        public int GetEntropy()
+        {
+            return candidates.Count();
+        }
+
+        public void Collapse()
+        {
+            var id = candidates.First(); // TODO Jonas: randomize
+            candidates.IntersectWith(new BitSet(1UL << id));
         }
     }
 }

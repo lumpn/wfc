@@ -1,7 +1,7 @@
 //----------------------------------------
 // MIT License
 // Copyright(c) 2023 Jonas Boetel
-//---------------------------------------- 
+//----------------------------------------
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +11,7 @@ namespace Lumpn.WFC
     {
         private readonly Level level;
 
-        private readonly Queue<System.ValueTuple<Vector3Int, Slot>> wave = new Queue<System.ValueTuple<Vector3Int, Slot>>();
+        private readonly Queue<Slot> wave = new Queue<Slot>();
 
         public Wave(Level level)
         {
@@ -20,23 +20,38 @@ namespace Lumpn.WFC
 
         public void Collapse()
         {
-            // TODO Jonas: collapse all non-collapsed slots
+            var openSlots = new List<Slot>(level.GetOpenSlots());
+
+            while (openSlots.Count > 0)
+            {
+                openSlots.Sort(CompareByEntropy);
+                var slot = openSlots[openSlots.Count - 1];
+                openSlots.RemoveAt(openSlots.Count - 1);
+
+                slot.Collapse();
+                wave.Enqueue(slot);
+                Process();
+            }
+        }
+
+        private static int CompareByEntropy(Slot a, Slot b)
+        {
+            return a.GetEntropy() - b.GetEntropy();
         }
 
         public void Constrain(Vector3Int position, BitSet allowed)
         {
             if (level.TryGetSlot(position, out Slot slot))
             {
-                Constrain(position, slot, allowed);
+                Constrain(slot, allowed);
             }
         }
 
         public void Process()
         {
-            while (wave.TryDequeue(out System.ValueTuple<Vector3Int, Slot> pair))
+            while (wave.TryDequeue(out Slot slot))
             {
-                var position = pair.Item1;
-                var slot = pair.Item2;
+                var position = slot.position;
                 slot.MarkClean();
 
                 foreach (var direction in DirectionUtils.directions)
@@ -45,13 +60,13 @@ namespace Lumpn.WFC
                     if (level.TryGetSlot(neighborPosition, out Slot neighbor))
                     {
                         var allowed = slot.GetAllowed(direction);
-                        Constrain(neighborPosition, neighbor, allowed);
+                        Constrain(neighbor, allowed);
                     }
                 }
             }
         }
 
-        private void Constrain(Vector3Int position, Slot slot, BitSet allowed)
+        private void Constrain(Slot slot, BitSet allowed)
         {
             var changed = slot.Constrain(allowed);
 
@@ -60,7 +75,7 @@ namespace Lumpn.WFC
                 // propagate
                 if (slot.MarkDirty())
                 {
-                    wave.Enqueue(new System.ValueTuple<Vector3Int, Slot>(position, slot));
+                    wave.Enqueue(slot);
                 }
             }
         }

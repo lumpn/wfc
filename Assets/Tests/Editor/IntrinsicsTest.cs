@@ -1,7 +1,7 @@
 //----------------------------------------
 // MIT License
 // Copyright(c) 2023 Jonas Boetel
-//---------------------------------------- 
+//----------------------------------------
 using NUnit.Framework;
 using Unity.Burst.Intrinsics;
 

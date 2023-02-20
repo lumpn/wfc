@@ -1,7 +1,7 @@
 //----------------------------------------
 // MIT License
 // Copyright(c) 2023 Jonas Boetel
-//---------------------------------------- 
+//----------------------------------------
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -35,7 +35,7 @@ namespace Lumpn.WFC
                     for (int z = 0; z < size.z; z++)
                     {
                         var slotType = slotTypes[(x % 3) + (z % 3) * 3 + (y % 3) * 3 * 3];
-                        slots[x, y, z] = new Slot(slotType);
+                        slots[x, y, z] = new Slot(new Vector3Int(x, y, z), slotType);
                     }
                 }
             }
@@ -75,6 +75,17 @@ namespace Lumpn.WFC
         {
             var offset = offsets[direction];
             return position + offset;
+        }
+
+        public IEnumerable<Slot> GetOpenSlots()
+        {
+            foreach (var slot in slots)
+            {
+                if (slot.IsOpen())
+                {
+                    yield return slot;
+                }
+            }
         }
     }
 }

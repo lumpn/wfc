@@ -1,7 +1,7 @@
 //----------------------------------------
 // MIT License
 // Copyright(c) 2023 Jonas Boetel
-//---------------------------------------- 
+//----------------------------------------
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.Intrinsics;

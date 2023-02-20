@@ -76,6 +76,15 @@
       },
       "url": "https://packages.unity.com"
     },
+    "de.lumpn.unity-formatting": {
+      "version": "https://github.com/lumpn/unity-formatting.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.ext.nunit": "1.0.0"
+      },
+      "hash": "ba7b50748c265a5a171746aefa22a32db4fb04c8"
+    },
     "com.unity.modules.imgui": {
       "version": "1.0.0",
       "depth": 1,

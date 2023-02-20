@@ -1,7 +1,7 @@
 //----------------------------------------
 // MIT License
 // Copyright(c) 2023 Jonas Boetel
-//---------------------------------------- 
+//----------------------------------------
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
