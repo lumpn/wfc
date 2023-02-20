@@ -58,7 +58,7 @@ namespace Lumpn.WFC
                         var prefabModule = prefab.GetComponent<Module>();
                         targetSlotType.modules.Add(prefabModule);
 
-                        modules.Add(module);
+                        modules.Add(prefabModule);
                     }
                 }
 
@@ -87,6 +87,8 @@ namespace Lumpn.WFC
 
                         module.allowed[(int)direction] = allowed.value;
                     }
+
+                    EditorUtility.SetDirty(module);
                 }
 
                 AssetDatabase.SaveAssets();
