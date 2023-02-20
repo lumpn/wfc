@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3dba8f09d6aa9c7419a7d2eabdeac746, type: 3}
-  m_Name: WallToCeilingEast
+  m_Name: WallTopEast
   m_EditorClassIdentifier: 
   neighbors:
   - {fileID: 11400000, guid: 117e6270cd16f4c4d8bae19be7456e5e, type: 2}

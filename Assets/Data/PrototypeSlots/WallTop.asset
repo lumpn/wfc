@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d14a240bd8ec3b44d953e86804c86a31, type: 3}
-  m_Name: WallToFloor
+  m_Name: WallTop
   m_EditorClassIdentifier: 
   targetSlotTypes:
-  - {fileID: 11400000, guid: e8b2d7f3eb84e23439e883a6142cfc35, type: 2}
-  - {fileID: 11400000, guid: bbf18ec0ce171e3459cd5cddd61f7c12, type: 2}
-  - {fileID: 11400000, guid: 172407d2326115044826012259d160e1, type: 2}
-  - {fileID: 11400000, guid: 53e2eea3275700343a34b1cffc16459e, type: 2}
+  - {fileID: 11400000, guid: d2f8243a20564ab4d879fc140145206d, type: 2}
+  - {fileID: 11400000, guid: 9e74bd35f668408499f96732acdd26f3, type: 2}
+  - {fileID: 11400000, guid: 956cc18aafb4acd44824cdc487705038, type: 2}
+  - {fileID: 11400000, guid: 2b3ada4052047244ebabe2d902471f8a, type: 2}
