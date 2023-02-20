@@ -11,6 +11,7 @@ namespace Lumpn.WFC
     [CreateAssetMenu]
     public class SlotType : ScriptableObject
     {
+        [SerializeField] public SlotType[] neighbors;
         [SerializeField] public List<Module> modules;
         [SerializeField] public BitSet candidates;
 

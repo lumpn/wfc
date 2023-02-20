@@ -11,5 +11,6 @@ namespace Lumpn.WFC
     {
         [SerializeField] public PrototypeSlot slot;
         [SerializeField] public Connector north, south, east, west, up, down;
+        [SerializeField] public Connector[] connectors;
     }
 }
