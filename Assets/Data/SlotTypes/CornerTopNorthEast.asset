@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: CornerTopNorthEast
   m_EditorClassIdentifier: 
   neighbors:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: bfc17a23aee7d5c4eb8e8a3cb9e81c83, type: 2}
   - {fileID: 11400000, guid: 2b3ada4052047244ebabe2d902471f8a, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: db6246d3f7eaf574dae512898e15c119, type: 2}
   - {fileID: 11400000, guid: 956cc18aafb4acd44824cdc487705038, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 217328f0d3126e64d8b6391f4a1dd703, type: 2}
   - {fileID: 11400000, guid: cafc38ae67410b5459d8f380e373a9de, type: 2}
   modules:
   - {fileID: 8416928154423247596, guid: 0a89811aa80e7ba42ac97bc2e20cb387, type: 3}

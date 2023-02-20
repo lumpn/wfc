@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neighbors:
   - {fileID: 11400000, guid: bbf18ec0ce171e3459cd5cddd61f7c12, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: b090c22228e23ba4ebb21d73147f3d11, type: 2}
   - {fileID: 11400000, guid: e8b2d7f3eb84e23439e883a6142cfc35, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 62a8db46a5c8eee4eb2f099aedd0cb35, type: 2}
   - {fileID: 11400000, guid: 37da6756fe970e84499a2926d3e1ef62, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 342e477e466ffec4287546ca9e380989, type: 2}
   modules:
   - {fileID: 9191553073091098089, guid: 3eb19849147da90439943ac99698386b, type: 3}
