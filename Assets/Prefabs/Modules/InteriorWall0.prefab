@@ -142,6 +142,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db96dcd0d9c260439d9b35c695d698e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
+  slotType: {fileID: 11400000, guid: ae0ebb7e430409249aaa4d8e0f602411, type: 2}
+  prototype: {fileID: 4342053058781211010, guid: 879f0bb1beb6cbe4ab24514b52a2ad54, type: 3}
+  connectors: []
   allowed: 
 --- !u!1 &3456922215151568492
 GameObject:

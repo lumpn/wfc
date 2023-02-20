@@ -49,6 +49,7 @@ namespace Lumpn.WFC
                     EditorUtility.SetDirty(slotType);
                 }
 
+                var modules = new List<Module>();
                 foreach (var prototype in target.prototypeCollection.prototypes)
                 {
                     var slot = prototype.slot;
@@ -61,7 +62,9 @@ namespace Lumpn.WFC
                         var go = new GameObject(prototype.name);
                         var module = go.AddComponent<Module>();
                         module.id = targetSlotType.modules.Count;
+                        module.slotType = targetSlotType;
                         module.prototype = prototype;
+                        module.connectors = Rotate(prototype.connectors, i);
 
                         var parent = go.transform;
 
@@ -74,42 +77,45 @@ namespace Lumpn.WFC
 
                         var prefabModule = prefab.GetComponent<Module>();
                         targetSlotType.modules.Add(prefabModule);
+
+                        modules.Add(module);
                     }
                 }
 
-                foreach (var prototype in target.prototypeCollection.prototypes)
+                foreach (var module in modules)
                 {
-                    var slot = prototype.slot;
-                    for (int i = 0; i < slot.targetSlotTypes.Length; i++)
+                    module.allowed = new ulong[directions.Length];
+
+                    var slotType = module.slotType;
+                    foreach (var direction in directions)
                     {
-                        var targetSlotType = slot.targetSlotTypes[i];
-                        var module = AssetDatabase.LoadAssetAtPath<Module>($"Assets/Prefabs/Modules/{prototype.name}{i}.prefab");
+                        var allowed = new BitSet(0);
+                        var connector1 = module.connectors[(int)direction];
 
-                        foreach (var direction in directions)
+                        var neighborSlotType = slotType.neighbors[(int)direction];
+                        var inverseDirection = inverseDirections[(int)direction];
+
+                        foreach (var neighborModule in neighborSlotType.modules)
                         {
-                            var rotatedDirection = rotatedDirections[i, (int)direction];
-                            var neighborTargetSlotType = targetSlotType.neighbors[(int)rotatedDirection];
+                            var connector2 = neighborModule.connectors[(int)inverseDirection];
 
-                            var connector1 = prototype.connectors[(int)direction];
-
-                            var inverseDirection = inverseDirections[(int)direction];
-                            foreach (var otherPrototype in target.prototypeCollection.prototypes)
+                            if (connector1 == connector2)
                             {
-                                var otherSlot = otherPrototype.slot;
-                                for (int j = 0; j < otherSlot.targetSlotTypes.Length; j++)
-                                {
-                                    if (otherSlot.targetSlotTypes[j] == neighborTargetSlotType)
-                                    {
-
-                                    }
-                                }
+                                allowed.UnionWith(new BitSet(1UL << neighborModule.id));
                             }
                         }
+
+                        module.allowed[(int)direction] = allowed.value;
                     }
                 }
 
                 AssetDatabase.SaveAssets();
             }
+        }
+
+        private static Connector[] Rotate(Connector[] connectors, int rotation)
+        {
+            return connectors; // TODO Jonas: rotate
         }
     }
 }

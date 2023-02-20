@@ -345,3 +345,10 @@ MonoBehaviour:
   west: {fileID: 11400000, guid: 2d0018d7af406d445afa561d489a0f08, type: 2}
   up: {fileID: 11400000, guid: 6574e8851365cb94092ada34021d8a7f, type: 2}
   down: {fileID: 11400000, guid: 2d0018d7af406d445afa561d489a0f08, type: 2}
+  connectors:
+  - {fileID: 11400000, guid: 62807a0d7b108894b90f009417d69f72, type: 2}
+  - {fileID: 11400000, guid: 2d0018d7af406d445afa561d489a0f08, type: 2}
+  - {fileID: 11400000, guid: 62807a0d7b108894b90f009417d69f72, type: 2}
+  - {fileID: 11400000, guid: 2d0018d7af406d445afa561d489a0f08, type: 2}
+  - {fileID: 11400000, guid: 6574e8851365cb94092ada34021d8a7f, type: 2}
+  - {fileID: 11400000, guid: 2d0018d7af406d445afa561d489a0f08, type: 2}

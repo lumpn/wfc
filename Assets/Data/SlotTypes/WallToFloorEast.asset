@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dba8f09d6aa9c7419a7d2eabdeac746, type: 3}
   m_Name: WallToFloorEast
   m_EditorClassIdentifier: 
+  neighbors: []
   modules:
   - {fileID: 8306711843157751057, guid: 9936c1ee418862245a80305437df91b0, type: 3}

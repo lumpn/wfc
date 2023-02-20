@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dba8f09d6aa9c7419a7d2eabdeac746, type: 3}
   m_Name: WallWest
   m_EditorClassIdentifier: 
+  neighbors: []
   modules:
   - {fileID: 3858337080219742329, guid: 6b8f95d6d2a7abe449425b4a6b2f267d, type: 3}

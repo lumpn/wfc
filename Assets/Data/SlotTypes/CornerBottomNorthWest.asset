@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dba8f09d6aa9c7419a7d2eabdeac746, type: 3}
   m_Name: CornerBottomNorthWest
   m_EditorClassIdentifier: 
+  neighbors: []
   modules:
   - {fileID: 8604875059921553452, guid: b4d16f83bda4d914db740e2a3842a91e, type: 3}

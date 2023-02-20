@@ -9,7 +9,9 @@ namespace Lumpn.WFC
     public sealed class Module : MonoBehaviour
     {
         [SerializeField] public int id;
+        [SerializeField] public SlotType slotType;
         [SerializeField] public Prototype prototype;
+        [SerializeField] public Connector[] connectors;
         [SerializeField] public ulong[] allowed;
 
         public BitSet GetAllowed(Direction direction)

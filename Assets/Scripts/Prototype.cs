@@ -12,5 +12,20 @@ namespace Lumpn.WFC
         [SerializeField] public PrototypeSlot slot;
         [SerializeField] public Connector north, south, east, west, up, down;
         [SerializeField] public Connector[] connectors;
+
+
+        [ContextMenu(nameof(ConvertConnectors))]
+        public void ConvertConnectors()
+        {
+            connectors = new[]
+            {
+                north,
+                south,
+                east,
+                west,
+                up,
+                down,
+            };
+        }
     }
 }

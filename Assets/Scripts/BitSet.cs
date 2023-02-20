@@ -14,6 +14,8 @@ namespace Lumpn.WFC
     {
         private ulong bits;
 
+        public ulong value => bits;
+
         public BitSet(ulong bits)
         {
             this.bits = bits;

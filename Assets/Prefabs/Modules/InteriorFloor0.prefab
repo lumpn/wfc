@@ -174,4 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db96dcd0d9c260439d9b35c695d698e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
+  slotType: {fileID: 11400000, guid: cee7a0f1a12d83f4c9401368812dad43, type: 2}
+  prototype: {fileID: 4380046830357641459, guid: 3400aa9e396faf540a4d3858cfd9f478, type: 3}
+  connectors: []
   allowed: 

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dba8f09d6aa9c7419a7d2eabdeac746, type: 3}
   m_Name: WallNorth
   m_EditorClassIdentifier: 
+  neighbors: []
   modules:
   - {fileID: 4936249957723869209, guid: 86f116a45fec94d43993e08499851d07, type: 3}

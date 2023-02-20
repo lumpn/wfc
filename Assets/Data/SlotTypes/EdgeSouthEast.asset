@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dba8f09d6aa9c7419a7d2eabdeac746, type: 3}
   m_Name: EdgeSouthEast
   m_EditorClassIdentifier: 
+  neighbors: []
   modules:
   - {fileID: 1539839253740323078, guid: 6c23d647e44efe74aba89cc7118bf246, type: 3}
