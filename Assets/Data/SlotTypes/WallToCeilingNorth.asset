@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dba8f09d6aa9c7419a7d2eabdeac746, type: 3}
   m_Name: WallToCeilingNorth
   m_EditorClassIdentifier: 
-  neighbors: []
+  neighbors:
+  - {fileID: 11400000, guid: d2f8243a20564ab4d879fc140145206d, type: 2}
+  - {fileID: 11400000, guid: e7159ce89907259488f7c493bac48dd0, type: 2}
+  - {fileID: 11400000, guid: 117e6270cd16f4c4d8bae19be7456e5e, type: 2}
+  - {fileID: 11400000, guid: db6246d3f7eaf574dae512898e15c119, type: 2}
+  - {fileID: 11400000, guid: 172407d2326115044826012259d160e1, type: 2}
+  - {fileID: 11400000, guid: 4950c3b3ad3dff74381340da5f11c229, type: 2}
   modules:
   - {fileID: 3713062667183460685, guid: 5e4bead192880e444a2ef23078515df1, type: 3}

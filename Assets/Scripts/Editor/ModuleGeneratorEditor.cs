@@ -11,26 +11,6 @@ namespace Lumpn.WFC
     [CustomEditor(typeof(ModuleGenerator))]
     public class ModuleGeneratorEditor : Editor<ModuleGenerator>
     {
-        private static readonly Direction[] directions =
-        {
-            Direction.North,
-            Direction.South,
-            Direction.East,
-            Direction.West,
-            Direction.Up,
-            Direction.Down,
-        };
-
-        private static readonly Direction[] inverseDirections =
-        {
-            Direction.South,
-            Direction.North,
-            Direction.West,
-            Direction.East,
-            Direction.Down,
-            Direction.Up,
-        };
-
         private static readonly Direction[,] rotatedDirections =
         {
             {Direction.North, Direction.South, Direction.East, Direction.West, Direction.Up, Direction.Down},
@@ -84,16 +64,16 @@ namespace Lumpn.WFC
 
                 foreach (var module in modules)
                 {
-                    module.allowed = new ulong[directions.Length];
+                    module.allowed = new ulong[DirectionUtils.directions.Length];
 
                     var slotType = module.slotType;
-                    foreach (var direction in directions)
+                    foreach (var direction in DirectionUtils.directions)
                     {
                         var allowed = new BitSet(0);
                         var connector1 = module.connectors[(int)direction];
 
                         var neighborSlotType = slotType.neighbors[(int)direction];
-                        var inverseDirection = inverseDirections[(int)direction];
+                        var inverseDirection = DirectionUtils.inverseDirections[(int)direction];
 
                         foreach (var neighborModule in neighborSlotType.modules)
                         {

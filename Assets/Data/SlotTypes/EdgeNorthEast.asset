@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dba8f09d6aa9c7419a7d2eabdeac746, type: 3}
   m_Name: EdgeNorthEast
   m_EditorClassIdentifier: 
-  neighbors: []
+  neighbors:
+  - {fileID: 11400000, guid: 4521a1903b9d3ec4ca366d75e34b4bcd, type: 2}
+  - {fileID: 11400000, guid: 88135167bd84e434ca0e28fb4969cfea, type: 2}
+  - {fileID: 11400000, guid: 3356b68d18de3eb4ba2e994134bbc640, type: 2}
+  - {fileID: 11400000, guid: 4950c3b3ad3dff74381340da5f11c229, type: 2}
+  - {fileID: 11400000, guid: 117e6270cd16f4c4d8bae19be7456e5e, type: 2}
+  - {fileID: 11400000, guid: 217328f0d3126e64d8b6391f4a1dd703, type: 2}
   modules:
   - {fileID: 6328997289468280454, guid: 818c44d4a94084441b3f08fc7b75ca30, type: 3}

@@ -15,6 +15,15 @@ namespace Lumpn.WFC
         [SerializeField] public List<Module> modules;
         [SerializeField] public BitSet candidates;
 
-        // TODO Jonas: implement
+        [ContextMenu("Propagate")]
+        private void Propagate()
+        {
+            foreach (var direction in DirectionUtils.directions)
+            {
+                var neighborSlotType = neighbors[(int)direction];
+                var inverseDirection = DirectionUtils.inverseDirections[(int)direction];
+                neighborSlotType.neighbors[(int)inverseDirection] = this;
+            }
+        }
     }
 }

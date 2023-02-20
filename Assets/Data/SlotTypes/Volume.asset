@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dba8f09d6aa9c7419a7d2eabdeac746, type: 3}
   m_Name: Volume
   m_EditorClassIdentifier: 
-  neighbors: []
+  neighbors:
+  - {fileID: 11400000, guid: 4950c3b3ad3dff74381340da5f11c229, type: 2}
+  - {fileID: 11400000, guid: ae0ebb7e430409249aaa4d8e0f602411, type: 2}
+  - {fileID: 11400000, guid: 88135167bd84e434ca0e28fb4969cfea, type: 2}
+  - {fileID: 11400000, guid: 5a7e8da592478c543aa9a704780f186d, type: 2}
+  - {fileID: 11400000, guid: e7159ce89907259488f7c493bac48dd0, type: 2}
+  - {fileID: 11400000, guid: cee7a0f1a12d83f4c9401368812dad43, type: 2}
   modules:
   - {fileID: 7084685040403781807, guid: 7947f28cc8e1cef44add016a2ea38e45, type: 3}

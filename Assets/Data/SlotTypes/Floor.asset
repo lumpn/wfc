@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dba8f09d6aa9c7419a7d2eabdeac746, type: 3}
   m_Name: Floor
   m_EditorClassIdentifier: 
-  neighbors: []
+  neighbors:
+  - {fileID: 11400000, guid: 172407d2326115044826012259d160e1, type: 2}
+  - {fileID: 11400000, guid: e8b2d7f3eb84e23439e883a6142cfc35, type: 2}
+  - {fileID: 11400000, guid: 53e2eea3275700343a34b1cffc16459e, type: 2}
+  - {fileID: 11400000, guid: bbf18ec0ce171e3459cd5cddd61f7c12, type: 2}
+  - {fileID: 11400000, guid: 5de906a17eb1b6a4eaa58284dc425367, type: 2}
+  - {fileID: 11400000, guid: e7159ce89907259488f7c493bac48dd0, type: 2}
   modules:
   - {fileID: 4651389812073487514, guid: 1c3cff20fdc471548a5b2b819f92e7fc, type: 3}

@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dba8f09d6aa9c7419a7d2eabdeac746, type: 3}
   m_Name: WallNorth
   m_EditorClassIdentifier: 
-  neighbors: []
+  neighbors:
+  - {fileID: 11400000, guid: ae0ebb7e430409249aaa4d8e0f602411, type: 2}
+  - {fileID: 11400000, guid: 5de906a17eb1b6a4eaa58284dc425367, type: 2}
+  - {fileID: 11400000, guid: cafc38ae67410b5459d8f380e373a9de, type: 2}
+  - {fileID: 11400000, guid: 3356b68d18de3eb4ba2e994134bbc640, type: 2}
+  - {fileID: 11400000, guid: 956cc18aafb4acd44824cdc487705038, type: 2}
+  - {fileID: 11400000, guid: 172407d2326115044826012259d160e1, type: 2}
   modules:
   - {fileID: 4936249957723869209, guid: 86f116a45fec94d43993e08499851d07, type: 3}

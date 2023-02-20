@@ -48,7 +48,13 @@ MonoBehaviour:
   id: 0
   slotType: {fileID: 11400000, guid: 5a7e8da592478c543aa9a704780f186d, type: 2}
   prototype: {fileID: 4342053058781211010, guid: 879f0bb1beb6cbe4ab24514b52a2ad54, type: 3}
-  connectors: []
+  connectors:
+  - {fileID: 11400000, guid: d3079a01178fe99489e4969ed3d3a346, type: 2}
+  - {fileID: 11400000, guid: 2d0018d7af406d445afa561d489a0f08, type: 2}
+  - {fileID: 11400000, guid: ea5320d58df7d4b468e4a6d67fb531ee, type: 2}
+  - {fileID: 11400000, guid: ea5320d58df7d4b468e4a6d67fb531ee, type: 2}
+  - {fileID: 11400000, guid: ea5320d58df7d4b468e4a6d67fb531ee, type: 2}
+  - {fileID: 11400000, guid: ea5320d58df7d4b468e4a6d67fb531ee, type: 2}
   allowed: 
 --- !u!1 &3145999081288165562
 GameObject:

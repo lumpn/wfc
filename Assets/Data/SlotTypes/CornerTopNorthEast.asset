@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dba8f09d6aa9c7419a7d2eabdeac746, type: 3}
   m_Name: CornerTopNorthEast
   m_EditorClassIdentifier: 
-  neighbors: []
+  neighbors:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 2b3ada4052047244ebabe2d902471f8a, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 956cc18aafb4acd44824cdc487705038, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: cafc38ae67410b5459d8f380e373a9de, type: 2}
   modules:
   - {fileID: 8416928154423247596, guid: 0a89811aa80e7ba42ac97bc2e20cb387, type: 3}
