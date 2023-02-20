@@ -182,6 +182,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 956cc18aafb4acd44824cdc487705038, type: 2}
   - {fileID: 11400000, guid: 117e6270cd16f4c4d8bae19be7456e5e, type: 2}
   interiorVolumeId: 0
+  seed: 1
 --- !u!4 &512191133
 Transform:
   m_ObjectHideFlags: 0

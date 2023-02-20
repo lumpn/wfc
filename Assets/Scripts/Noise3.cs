@@ -28,10 +28,10 @@ namespace Lumpn.WFC
             }
         }
 
-        public int Range(Vector3Int position, int min, int max)
+        public int Range(Vector3Int position, int minInclusive, int maxExclusive)
         {
             var noise = Get3dNoiseUint(position.x, position.y, position.z, seed);
-            var range = max - min;
+            var range = maxExclusive - minInclusive;
 
             unchecked
             {
@@ -39,7 +39,7 @@ namespace Lumpn.WFC
                 longNoise *= (uint)range;
                 longNoise /= uint.MaxValue;
 
-                return min + (int)longNoise;
+                return minInclusive + (int)longNoise;
             }
         }
 

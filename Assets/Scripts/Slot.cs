@@ -2,7 +2,6 @@
 // MIT License
 // Copyright(c) 2023 Jonas Boetel
 //----------------------------------------
-using System;
 using UnityEngine;
 
 namespace Lumpn.WFC
@@ -83,7 +82,9 @@ namespace Lumpn.WFC
 
             var id = enumerator.Current;
 
-            candidates.IntersectWith(new BitSet(1UL << rank));
+            Debug.LogFormat("candidates {0}, num candidates {1}, rank {2}, id {3}", candidates.value, candidates.Count(), rank, id);
+
+            candidates.IntersectWith(new BitSet(1UL << id));
             Debug.Assert(candidates.Count() == 1, "Not collapsed");
         }
     }
