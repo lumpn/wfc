@@ -17,9 +17,9 @@ namespace Lumpn.WFC
             var level = new Level(size, slotTypes);
             var wave = new Wave(level);
 
-            //wave.Constrain(Vector3Int.one, new BitSet(1UL << interiorVolumeId));
-            //wave.Process();
-            //wave.Collapse();
+            wave.Constrain(Vector3Int.one, new BitSet(1UL << interiorVolumeId));
+            wave.Process();
+            wave.Collapse();
 
             level.Spawn();
         }
