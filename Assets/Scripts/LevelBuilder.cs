@@ -12,6 +12,7 @@ namespace Lumpn.WFC
         [SerializeField] private SlotType[] slotTypes;
         [SerializeField] private Module interiorVolume;
         [SerializeField] private Module exteriorVolume;
+        [SerializeField] private Module stairsVolume;
         [SerializeField] private int seed;
 
         [System.NonSerialized] private GameObject root;
@@ -27,7 +28,7 @@ namespace Lumpn.WFC
             var level = new Level(size, slotTypes);
             var wave = new Wave(level);
 
-            wave.Constrain(Vector3Int.one, new BitSet(1UL << exteriorVolume.id));
+            wave.Constrain(Vector3Int.one, new BitSet(1UL << stairsVolume.id));
             wave.Process();
 
             var random = new Noise3(seed);
