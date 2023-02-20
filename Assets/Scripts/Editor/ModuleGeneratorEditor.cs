@@ -29,7 +29,6 @@ namespace Lumpn.WFC
                 foreach (var slotType in target.slotTypes)
                 {
                     slotType.modules.Clear();
-                    EditorUtility.SetDirty(slotType);
                 }
 
                 var modules = new List<Module>();
@@ -72,8 +71,13 @@ namespace Lumpn.WFC
                         candidates.UnionWith(new BitSet(1UL << module.id));
                     }
                     slotType.candidates = candidates.value;
+                    EditorUtility.SetDirty(slotType);
                 }
 
+                AssetDatabase.StopAssetEditing();
+                AssetDatabase.SaveAssets();
+
+                AssetDatabase.StartAssetEditing();
                 foreach (var module in modules)
                 {
                     module.allowed = new ulong[DirectionUtils.directions.Length];
@@ -103,8 +107,8 @@ namespace Lumpn.WFC
 
                     EditorUtility.SetDirty(module);
                 }
-
                 AssetDatabase.StopAssetEditing();
+
                 AssetDatabase.SaveAssets();
             }
         }
