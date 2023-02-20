@@ -14,9 +14,9 @@ namespace Lumpn.WFC
         private static readonly Direction[,] rotatedDirections =
         {
             {Direction.North, Direction.South, Direction.East, Direction.West, Direction.Up, Direction.Down},
-            {Direction.East, Direction.West, Direction.North, Direction.South, Direction.Up, Direction.Down},
+            {Direction.East, Direction.West, Direction.South, Direction.North, Direction.Up, Direction.Down},
             {Direction.South, Direction.North, Direction.West, Direction.East, Direction.Up, Direction.Down},
-            {Direction.West, Direction.East, Direction.South, Direction.North, Direction.Up, Direction.Down},
+            {Direction.West, Direction.East, Direction.North, Direction.South, Direction.Up, Direction.Down},
         };
 
         protected override void OnInspectorGUI(ModuleGenerator target)
