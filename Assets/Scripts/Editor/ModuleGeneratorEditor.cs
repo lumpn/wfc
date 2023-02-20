@@ -49,9 +49,8 @@ namespace Lumpn.WFC
 
                         var parent = go.transform;
 
-                        var clone = Object.Instantiate(prototype, position, rotation, parent);
-                        clone.name = prototype.name;
-                        Object.DestroyImmediate(clone);
+                        var clone = (Prototype)PrefabUtility.InstantiatePrefab(prototype, parent);
+                        clone.transform.SetPositionAndRotation(position, rotation);
 
                         var prefab = PrefabUtility.SaveAsPrefabAsset(go, $"Assets/Prefabs/Modules/{prototype.name}{i}.prefab");
                         Object.DestroyImmediate(go);
