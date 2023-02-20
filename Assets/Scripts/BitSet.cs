@@ -60,6 +60,7 @@ namespace Lumpn.WFC
             if (!condition)
             {
                 Debug.LogAssertionFormat(format, p1, p2);
+                throw new System.InvalidOperationException();
             }
         }
     }

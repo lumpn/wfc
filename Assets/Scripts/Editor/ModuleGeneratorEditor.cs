@@ -24,8 +24,6 @@ namespace Lumpn.WFC
         {
             if (GUILayout.Button("Create modules"))
             {
-                AssetDatabase.StartAssetEditing();
-
                 foreach (var slotType in target.slotTypes)
                 {
                     slotType.modules.Clear();
@@ -63,6 +61,9 @@ namespace Lumpn.WFC
                     }
                 }
 
+                AssetDatabase.SaveAssets();
+
+                AssetDatabase.StartAssetEditing();
                 foreach (var slotType in target.slotTypes)
                 {
                     var candidates = new BitSet();
@@ -74,10 +75,6 @@ namespace Lumpn.WFC
                     EditorUtility.SetDirty(slotType);
                 }
 
-                AssetDatabase.StopAssetEditing();
-                AssetDatabase.SaveAssets();
-
-                AssetDatabase.StartAssetEditing();
                 foreach (var module in modules)
                 {
                     module.allowed = new ulong[DirectionUtils.directions.Length];
