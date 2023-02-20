@@ -3,6 +3,7 @@
 // Copyright(c) 2023 Jonas Boetel
 //---------------------------------------- 
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -62,6 +63,16 @@ namespace Lumpn.WFC
                     }
                 }
 
+                foreach (var slotType in target.slotTypes)
+                {
+                    var candidates = new BitSet();
+                    foreach (var module in slotType.modules)
+                    {
+                        candidates.UnionWith(new BitSet(1UL << module.id));
+                    }
+                    slotType.candidates = candidates.value;
+                }
+
                 foreach (var module in modules)
                 {
                     module.allowed = new ulong[DirectionUtils.directions.Length];
@@ -69,7 +80,7 @@ namespace Lumpn.WFC
                     var slotType = module.slotType;
                     foreach (var direction in DirectionUtils.directions)
                     {
-                        var allowed = new BitSet(0);
+                        var allowed = new BitSet();
                         var connector1 = module.connectors[(int)direction];
 
                         var neighborSlotType = slotType.neighbors[(int)direction];

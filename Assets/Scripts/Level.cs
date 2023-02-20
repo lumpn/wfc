@@ -34,7 +34,7 @@ namespace Lumpn.WFC
                 {
                     for (int z = 0; z < size.z; z++)
                     {
-                        var slotType = slotTypes[(x % 3) + (y % 3) * 3 + (z % 3) * 3 * 3];
+                        var slotType = slotTypes[(x % 3) + (z % 3) * 3 + (y % 3) * 3 * 3];
                         slots[x, y, z] = new Slot(slotType);
                     }
                 }

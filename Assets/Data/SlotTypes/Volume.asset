@@ -21,3 +21,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cee7a0f1a12d83f4c9401368812dad43, type: 2}
   modules:
   - {fileID: 6388891332896171120, guid: 7947f28cc8e1cef44add016a2ea38e45, type: 3}
+  candidates: 1

@@ -18,7 +18,7 @@ namespace Lumpn.WFC
         public Slot(SlotType type)
         {
             this.type = type;
-            this.candidates = type.candidates;
+            this.candidates = new BitSet(type.candidates);
         }
 
         public bool Constrain(BitSet allowed)

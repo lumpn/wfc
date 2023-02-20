@@ -21,8 +21,8 @@ namespace Lumpn.WFC
 
         public void Spawn(Vector3Int position)
         {
-            // TODO Jonas: implement scaling
-            Object.Instantiate(gameObject, position, Quaternion.identity);
+            var worldPosition = Vector3Int.Scale(position / 3, new Vector3Int(5, 4, 5));
+            Object.Instantiate(gameObject, worldPosition, Quaternion.identity);
         }
     }
 }

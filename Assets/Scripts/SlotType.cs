@@ -13,7 +13,7 @@ namespace Lumpn.WFC
     {
         [SerializeField] public SlotType[] neighbors;
         [SerializeField] public List<Module> modules;
-        [SerializeField] public BitSet candidates;
+        [SerializeField] public ulong candidates;
 
         [ContextMenu("Propagate")]
         private void Propagate()
