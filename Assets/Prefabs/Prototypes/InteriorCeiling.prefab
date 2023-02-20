@@ -46,12 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slot: {fileID: 11400000, guid: f7dc9313f76ce644f8c2d2b2f04c39d9, type: 2}
-  north: {fileID: 11400000, guid: 02842613b08110542b0a7b38d72677d0, type: 2}
-  south: {fileID: 11400000, guid: 02842613b08110542b0a7b38d72677d0, type: 2}
-  east: {fileID: 11400000, guid: 02842613b08110542b0a7b38d72677d0, type: 2}
-  west: {fileID: 11400000, guid: 02842613b08110542b0a7b38d72677d0, type: 2}
-  up: {fileID: 11400000, guid: 2d0018d7af406d445afa561d489a0f08, type: 2}
-  down: {fileID: 11400000, guid: d3079a01178fe99489e4969ed3d3a346, type: 2}
   connectors:
   - {fileID: 11400000, guid: 02842613b08110542b0a7b38d72677d0, type: 2}
   - {fileID: 11400000, guid: 02842613b08110542b0a7b38d72677d0, type: 2}
