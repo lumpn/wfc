@@ -50,7 +50,7 @@ namespace Lumpn.WFC
                     for (int z = 0; z < size.z; z++)
                     {
                         var slot = slots[x, y, z];
-                        var position = new Vector3Int(x, z, y);
+                        var position = new Vector3Int(x, y, z);
                         slot.Spawn(parent, position);
                     }
                 }
