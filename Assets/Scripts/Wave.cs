@@ -18,7 +18,7 @@ namespace Lumpn.WFC
             this.level = level;
         }
 
-        public void Collapse()
+        public void Collapse(IRandom random)
         {
             var openSlots = new List<Slot>(level.GetOpenSlots());
 
@@ -28,7 +28,7 @@ namespace Lumpn.WFC
                 var slot = openSlots[openSlots.Count - 1];
                 openSlots.RemoveAt(openSlots.Count - 1);
 
-                slot.Collapse();
+                slot.Collapse(random);
                 wave.Enqueue(slot);
                 Process();
             }

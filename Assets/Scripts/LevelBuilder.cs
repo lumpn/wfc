@@ -11,6 +11,7 @@ namespace Lumpn.WFC
         [SerializeField] private Vector3Int size;
         [SerializeField] private SlotType[] slotTypes;
         [SerializeField] private int interiorVolumeId;
+        [SerializeField] private int seed;
 
         protected void Start()
         {
@@ -19,7 +20,9 @@ namespace Lumpn.WFC
 
             wave.Constrain(Vector3Int.one, new BitSet(1UL << interiorVolumeId));
             wave.Process();
-            wave.Collapse();
+
+            var random = new Noise3(seed);
+            wave.Collapse(random);
 
             level.Spawn();
         }

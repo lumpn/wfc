@@ -70,10 +70,20 @@ namespace Lumpn.WFC
             return candidates.Count();
         }
 
-        public void Collapse()
+        public void Collapse(IRandom random)
         {
-            var id = candidates.First(); // TODO Jonas: randomize
-            candidates.IntersectWith(new BitSet(1UL << id));
+            var rank = random.Range(position, 0, candidates.Count());
+
+            var enumerator = candidates.GetEnumerator();
+            enumerator.MoveNext();
+            for (int i = 0; i < rank; i++)
+            {
+                enumerator.MoveNext();
+            }
+
+            var id = enumerator.Current;
+
+            candidates.IntersectWith(new BitSet(1UL << rank));
             Debug.Assert(candidates.Count() == 1, "Not collapsed");
         }
     }
