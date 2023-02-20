@@ -19,10 +19,10 @@ namespace Lumpn.WFC
             return new BitSet(allowed[(int)direction]);
         }
 
-        public void Spawn(Vector3Int position)
+        public void Spawn(Transform parent, Vector3Int position)
         {
             var worldPosition = Vector3Int.Scale(position / 3, new Vector3Int(5, 4, 5));
-            Object.Instantiate(gameObject, worldPosition, Quaternion.identity);
+            Object.Instantiate(gameObject, worldPosition, Quaternion.identity, parent);
         }
     }
 }

@@ -50,13 +50,13 @@ namespace Lumpn.WFC
             return result;
         }
 
-        public void Spawn(Vector3Int position)
+        public void Spawn(Transform parent, Vector3Int position)
         {
             Debug.Assert(candidates.Count() == 1, "Not collapsed");
             var id = candidates.First();
 
             var module = type.modules[id];
-            module.Spawn(position);
+            module.Spawn(parent, position);
         }
 
         public bool IsOpen()
@@ -84,7 +84,7 @@ namespace Lumpn.WFC
 
             var id = enumerator.Current;
 
-            Debug.LogFormat("candidates {0}, num candidates {1}, rank {2}, id {3}", candidates.value, candidates.Count(), rank, id);
+            //Debug.LogFormat("candidates {0}, num candidates {1}, rank {2}, id {3}", candidates.value, candidates.Count(), rank, id);
 
             candidates.IntersectWith(new BitSet(1UL << id));
             Debug.Assert(candidates.Count() == 1, "Not collapsed");

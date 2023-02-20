@@ -41,7 +41,7 @@ namespace Lumpn.WFC
             }
         }
 
-        public void Spawn()
+        public void Spawn(Transform parent)
         {
             for (int x = 0; x < size.x; x++)
             {
@@ -51,7 +51,7 @@ namespace Lumpn.WFC
                     {
                         var slot = slots[x, y, z];
                         var position = new Vector3Int(x, z, y);
-                        slot.Spawn(position);
+                        slot.Spawn(parent, position);
                     }
                 }
             }
