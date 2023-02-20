@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 664428f55b64963418ff6a8ef2b0548f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 6, y: 3, z: 3}
+  size: {x: 3, y: 3, z: 3}
   slotTypes:
   - {fileID: 11400000, guid: 1f043aef4a1960e4eb8420a897c87941, type: 2}
   - {fileID: 11400000, guid: e8b2d7f3eb84e23439e883a6142cfc35, type: 2}
@@ -181,7 +181,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: db6246d3f7eaf574dae512898e15c119, type: 2}
   - {fileID: 11400000, guid: 956cc18aafb4acd44824cdc487705038, type: 2}
   - {fileID: 11400000, guid: 117e6270cd16f4c4d8bae19be7456e5e, type: 2}
-  interiorVolumeId: 0
+  interiorVolume: {fileID: 6388891332896171120, guid: 7947f28cc8e1cef44add016a2ea38e45, type: 3}
+  exteriorVolume: {fileID: 95050319730841836, guid: 35e422aa4e9f2e243ac80380d4cf35ff, type: 3}
   seed: 1
 --- !u!4 &512191133
 Transform:

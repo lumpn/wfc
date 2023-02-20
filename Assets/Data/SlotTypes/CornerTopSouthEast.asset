@@ -20,5 +20,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 62a8db46a5c8eee4eb2f099aedd0cb35, type: 2}
   - {fileID: 11400000, guid: 4521a1903b9d3ec4ca366d75e34b4bcd, type: 2}
   modules:
+  - {fileID: 7989866051980651516, guid: 7cb1b815c6b6d51438faa8770e77c42d, type: 3}
   - {fileID: 9130523349221583449, guid: edaa505c60851ec46b3485d7433f814b, type: 3}
-  candidates: 1
+  candidates: 3
