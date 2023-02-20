@@ -36,7 +36,7 @@ namespace Lumpn.WFC
             var oldValue = bits;
             bits &= other.bits;
 
-            Debug.Assert(bits != 0, "Contradiction");
+            AssertFormat(bits != 0, "Contradiction (oldValue {0}, other {1}, intersection 0)", oldValue, other.bits);
             return (oldValue != bits);
         }
 
@@ -53,6 +53,14 @@ namespace Lumpn.WFC
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+
+        private static void AssertFormat(bool condition, string format, ulong p1, ulong p2)
+        {
+            if (!condition)
+            {
+                Debug.LogAssertionFormat(format, p1, p2);
+            }
         }
     }
 }
