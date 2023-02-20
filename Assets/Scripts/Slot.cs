@@ -12,7 +12,7 @@ namespace Lumpn.WFC
     {
         public readonly Vector3Int position;
         private readonly SlotType type;
-        private readonly BitSet candidates;
+        private BitSet candidates;
         private bool isDirty = false;
 
         public Slot(Vector3Int position, SlotType type)
@@ -74,6 +74,7 @@ namespace Lumpn.WFC
         {
             var id = candidates.First(); // TODO Jonas: randomize
             candidates.IntersectWith(new BitSet(1UL << id));
+            Debug.Assert(candidates.Count() == 1, "Not collapsed");
         }
     }
 }

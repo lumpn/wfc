@@ -31,10 +31,8 @@ namespace Lumpn.WFC
 
         public bool MoveNext()
         {
-            while (index < numBits)
+            while (++index < numBits)
             {
-                index++;
-
                 if ((bits & (1UL << index)) != 0)
                 {
                     return true;
