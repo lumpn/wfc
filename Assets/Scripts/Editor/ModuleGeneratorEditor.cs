@@ -90,6 +90,7 @@ namespace Lumpn.WFC
                         {
                             var connector2 = neighborModule.connectors[(int)inverseDirection];
 
+                            // TODO Jonas: disallowed module pairs
                             if (connector1 == connector2)
                             {
                                 allowed.UnionWith(new BitSet(1UL << neighborModule.id));

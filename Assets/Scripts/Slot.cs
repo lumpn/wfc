@@ -66,11 +66,13 @@ namespace Lumpn.WFC
 
         public int GetEntropy()
         {
+            // TODO Jonas: entropy
             return candidates.Count();
         }
 
         public void Collapse(IRandom random)
         {
+            // TODO Jonas: weighted selection
             var rank = random.Range(position, 0, candidates.Count());
 
             var enumerator = candidates.GetEnumerator();
