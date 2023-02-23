@@ -181,9 +181,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: db6246d3f7eaf574dae512898e15c119, type: 2}
   - {fileID: 11400000, guid: 956cc18aafb4acd44824cdc487705038, type: 2}
   - {fileID: 11400000, guid: 117e6270cd16f4c4d8bae19be7456e5e, type: 2}
-  interiorVolume: {fileID: 6388891332896171120, guid: 7947f28cc8e1cef44add016a2ea38e45, type: 3}
-  exteriorVolume: {fileID: 95050319730841836, guid: 35e422aa4e9f2e243ac80380d4cf35ff, type: 3}
-  stairsVolume: {fileID: 7693872368298907083, guid: 8fdc6a896e33894409174e3c318608f5, type: 3}
+  interiorVolume: {fileID: 147289828683512793, guid: 7947f28cc8e1cef44add016a2ea38e45, type: 3}
+  exteriorVolume: {fileID: 4009506394133187379, guid: 35e422aa4e9f2e243ac80380d4cf35ff, type: 3}
+  stairsVolume: {fileID: 7437141722668084737, guid: 8fdc6a896e33894409174e3c318608f5, type: 3}
   seed: 1
 --- !u!4 &512191133
 Transform:

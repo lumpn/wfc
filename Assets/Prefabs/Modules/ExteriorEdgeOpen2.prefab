@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3449966886019441996
+--- !u!1 &3305569410266071779
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3224733721354314437}
-  - component: {fileID: 6787565243889987311}
+  - component: {fileID: 7003135027554699339}
+  - component: {fileID: 6854246826029999542}
   m_Layer: 0
   m_Name: ExteriorEdgeOpen2
   m_TagString: Untagged
@@ -17,29 +17,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3224733721354314437
+--- !u!4 &7003135027554699339
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3449966886019441996}
+  m_GameObject: {fileID: 3305569410266071779}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8095771955295593590}
+  - {fileID: 7168260355139628962}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6787565243889987311
+--- !u!114 &6854246826029999542
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3449966886019441996}
+  m_GameObject: {fileID: 3305569410266071779}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5db96dcd0d9c260439d9b35c695d698e, type: 3}
@@ -56,12 +56,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 37facb2790ff15d43aa0cd55ca013044, type: 2}
   - {fileID: 11400000, guid: 37facb2790ff15d43aa0cd55ca013044, type: 2}
   allowed: 02000000000000000400000000000000020000000000000004000000000000007a000000000000007c00000000000000
---- !u!1001 &5186024714090243419
+--- !u!1001 &6114557211861888655
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 3224733721354314437}
+    m_TransformParent: {fileID: 7003135027554699339}
     m_Modifications:
     - target: {fileID: 4008629948532670764, guid: bf7b432e78b4310449ec8e9ee9d24478, type: 3}
       propertyPath: m_Name
@@ -113,8 +113,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf7b432e78b4310449ec8e9ee9d24478, type: 3}
---- !u!4 &8095771955295593590 stripped
+--- !u!4 &7168260355139628962 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4008629948532670765, guid: bf7b432e78b4310449ec8e9ee9d24478, type: 3}
-  m_PrefabInstance: {fileID: 5186024714090243419}
+  m_PrefabInstance: {fileID: 6114557211861888655}
   m_PrefabAsset: {fileID: 0}

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d14a240bd8ec3b44d953e86804c86a31, type: 3}
+  m_Name: CornerTopAsymmetric
+  m_EditorClassIdentifier: 
+  targetSlotTypes:
+  - {fileID: 11400000, guid: 342e477e466ffec4287546ca9e380989, type: 2}
+  - {fileID: 11400000, guid: db6246d3f7eaf574dae512898e15c119, type: 2}
+  - {fileID: 11400000, guid: 117e6270cd16f4c4d8bae19be7456e5e, type: 2}
+  - {fileID: 11400000, guid: bfc17a23aee7d5c4eb8e8a3cb9e81c83, type: 2}
+  - {fileID: 11400000, guid: 342e477e466ffec4287546ca9e380989, type: 2}
+  - {fileID: 11400000, guid: db6246d3f7eaf574dae512898e15c119, type: 2}
+  - {fileID: 11400000, guid: 117e6270cd16f4c4d8bae19be7456e5e, type: 2}
+  - {fileID: 11400000, guid: bfc17a23aee7d5c4eb8e8a3cb9e81c83, type: 2}
